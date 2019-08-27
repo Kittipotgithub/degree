@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Input your data</h2>
+    hours:
+    <br>
+    <input type="text" id="hours"><br> minute:<br>
+    <input type="text" id="minutes">
+    <br> <br>
+    <button onclick="findDegree()">Click me</button>
+
+
+    <p id="time"></p>
+    <p id="degree"></p>
+
+
+
+</body>
+
+</html>
+
+<script>
+    function findDegree() {
+
+        var h = document.getElementById("hours").value
+        var m = document.getElementById("minutes").value
+            // There are 12 hours on the clock so 360° divided by 12 hours gives 30°
+            // per hour.
+            // There are 60 minutes on the clock so 360° divided by 60 minutes gives
+            // 6° per minute.
+        var x = h * 30 + (0.5 * m);
+        var y = m * 6;
+        var degree = 0;
+
+        if (x > y) {
+            degree = x - y
+        } else {
+            degree = y - x
+        }
+
+        document.getElementById("time").innerHTML = h + ":" + m;
+        document.getElementById("degree").innerHTML = degree;
+
+    }
+</script>
